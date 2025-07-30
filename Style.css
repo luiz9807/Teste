@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Exemplo de fonte */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0e5ea; /* Cor de fundo suave conforme a imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff; /* Fundo branco para o card */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px; /* Largura máxima do container principal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Para posicionar o cabeçalho verde */
+}
+
+.header {
+    background-color: #6a9c37; /* Cor verde da barra superior */
+    width: calc(100% + 60px); /* Largura para cobrir as bordas do container */
+    padding: 20px 30px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: -30px; /* Ajuste para alinhar com as bordas do container principal */
+    transform: translateY(-100%); /* Move o cabeçalho para cima do container */
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+.logo img {
+    height: 70px; /* Ajuste o tamanho da logo */
+}
+
+.login-button {
+    background-color: #3b5998; /* Azul escuro do botão de login */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-button i {
+    font-size: 1.2em;
+}
+
+.login-box {
+    margin-top: 80px; /* Espaço para o cabeçalho verde */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: calc(100% - 40px); /* Ajuste para o ícone */
+    padding: 12px 15px;
+    padding-right: 40px; /* Espaço para o ícone */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-with-icon i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.btn-entrar {
+    background-color: #3b5998; /* Azul escuro do botão Entrar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: auto;
+    display: block; /* Para o botão ocupar sua própria linha */
+    margin-left: auto; /* Alinha o botão à direita */
+    margin-top: 30px;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+        box-shadow: none; /* Remover sombra em telas pequenas para simular app */
+        border-radius: 0;
+        min-height: 100vh; /* Ocupar toda a altura em telas pequenas */
+    }
+
+    .header {
+        width: 100%;
+        left: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 15px 20px;
+    }
+
+    .login-box {
+        margin-top: 60px;
+        padding: 10px;
+    }
+
+    .btn-entrar {
+        width: 100%; /* Botão Entrar ocupa largura total em telas pequenas */
+        margin-right: auto;
+    }
+}
