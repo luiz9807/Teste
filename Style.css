@@ -148,3 +148,11 @@ body {
         margin-right: auto;
     }
 }
+
+/* Estilo para a mensagem de erro */
+.mensagem-erro {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+}
