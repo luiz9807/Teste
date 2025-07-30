@@ -1,78 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Sistema de Atletas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial; max-width: 800px; margin: auto; padding: 20px; }
-    h1 { color: #222; }
-    form { margin-bottom: 20px; }
-    input, select, button { margin: 5px 0; padding: 8px; width: 100%; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-  </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FPFA</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> </head>
 <body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="logo-fpfa.png" alt="Logo FPFA"> </div>
+            <button class="login-button">
+                <i class="fas fa-user"></i> LOGIN
+            </button>
+        </header>
 
-  <h1>Cadastro de Atletas</h1>
+        <main class="login-box">
+            <div class="input-group">
+                <label for="usuario">Usuário</label>
+                <div class="input-with-icon">
+                    <input type="text" id="usuario" value="10319949982">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <div class="input-with-icon">
+                    <input type="password" id="senha" value="••••••••••">
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+            <button class="btn-entrar">Entrar</button>
+        </main>
 
-  <form id="form-atleta">
-    <label>Nome:</label>
-    <input type="text" id="nome" required>
-
-    <label>Posição:</label>
-    <input type="text" id="posicao" required>
-
-    <label>Time:</label>
-    <input type="text" id="time" required>
-
-    <button type="submit">Cadastrar</button>
-  </form>
-
-  <h2>Lista de Atletas</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Posição</th>
-        <th>Time</th>
-      </tr>
-    </thead>
-    <tbody id="tabela-atletas">
-      <!-- Atletas serão inseridos aqui -->
-    </tbody>
-  </table>
-
-  <script>
-    const form = document.getElementById('form-atleta');
-    const tabela = document.getElementById('tabela-atletas');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const posicao = document.getElementById('posicao').value;
-      const time = document.getElementById('time').value;
-
-      // Aqui você irá trocar pela URL do seu backend JBoot futuramente
-      const resposta = await fetch('https://SEU_BACKEND/api/atletas', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nome, posicao, time })
-      });
-
-      if (resposta.ok) {
-        const novo = await resposta.json();
-        const linha = `<tr><td>${novo.nome}</td><td>${novo.posicao}</td><td>${novo.time}</td></tr>`;
-        tabela.innerHTML += linha;
-        form.reset();
-      } else {
-        alert('Erro ao cadastrar atleta!');
-      }
-    });
-
-    // Futuramente aqui você pode adicionar o carregamento inicial da lista com GET
-  </script>
-
+        <footer class="footer">
+            <p>&copy; Copyright Uniquesoft & JBoot2025. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>
